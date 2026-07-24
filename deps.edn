@@ -1,22 +1,22 @@
 {:paths ["src" "resources"]
- :deps {org.clojure/clojure {:mvn/version "1.12.4"}
+ :deps {org.clojure/clojure {:mvn/version "1.12.5"}
 
-        com.github.brettatoms/ring-hot-reload {:mvn/version "0.2.6"}
+        com.github.brettatoms/ring-hot-reload {:mvn/version "0.2.9"}
         integrant/integrant {:mvn/version "1.0.1"}
-        org.clojure/tools.logging {:mvn/version "1.3.0"}}
+        org.clojure/tools.logging {:mvn/version "1.3.1"}}
  :aliases {;; clojure -M:test
            :test {:extra-paths ["test"]
                   :extra-deps {lambdaisland/kaocha {:mvn/version "1.91.1392"}}
                   :main-opts ["-m" "kaocha.runner"]}
 
-           :build {:deps {io.github.clojure/tools.build {:mvn/version "0.10.11"}
-                          slipset/deps-deploy {:mvn/version "0.2.2"}}
+           :build {:deps {io.github.clojure/tools.build {:mvn/version "0.10.14"}
+                          slipset/deps-deploy {:mvn/version "0.2.5"}}
                    :ns-default build}
 
            ;; clojure -M:clj-kondo --lint src
-           :clj-kondo {:replace-deps {clj-kondo/clj-kondo {:mvn/version "2026.01.19"}}
+           :clj-kondo {:replace-deps {clj-kondo/clj-kondo {:mvn/version "2026.05.25"}}
                        :main-opts ["-m" "clj-kondo.main"]}
 
            ;; clojure -M:cljfmt check|fix
-           :cljfmt {:extra-deps {dev.weavejester/cljfmt {:mvn/version "0.16.3"}}
+           :cljfmt {:extra-deps {dev.weavejester/cljfmt {:mvn/version "0.16.5"}}
                     :main-opts ["-m" "cljfmt.main"]}}}
